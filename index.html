@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<title>大数据平台管理系统-集群首页</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css"></head>
+<body>
+	<div class="navbar navbar-default navbar-fixed-top topbar" role="navigation">
+		<a class="navbar-brand" href="#"></a>
+		<ul class="nav navbar-nav pull-right cornergroup">
+			<li>
+				<a href="#" class="icon-user" data-toggle="dropdown"></a>
+				<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+					<li role="presentation">
+						<a href="http://twitter.com/fat" tabindex="-1" role="menuitem">Action</a>
+					</li>
+					<li role="presentation">
+						<a href="http://twitter.com/fat" tabindex="-1" role="menuitem">Another action</a>
+					</li>
+					<li role="presentation">
+						<a href="http://twitter.com/fat" tabindex="-1" role="menuitem">Something else here</a>
+					</li>
+					<li class="divider" role="presentation"></li>
+					<li role="presentation">
+						<a href="http://twitter.com/fat" tabindex="-1" role="menuitem">退出</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#" class="icon-notifier"></a>
+			</li>
+			<li>
+				<a href="#" class="icon-set"></a>
+			</li>
+		</ul>
+	</div>
+	<div class="navbar navbar-default navbar-static-top sidebar" role="navigation">
+		<ul class="nav nav-pills  nav-stacked">
+			<li>
+				<a href="index.html" class="actived">
+					<span class="icon-cluster"></span>
+					集群状态
+				</a>
+				<span class="arrow pull-right"></span>
+			</li>
+			<li>
+				<a href="nodestatus.html" >
+					<span class="icon-node"></span>
+					节点状态
+				</a>
+					<span class="arrow pull-right"></span>
+
+			</li>
+			<li>
+				<a href="taskstatus.html" >
+					<span class="icon-task"></span>
+					任务状态
+				</a>
+					<span class="arrow pull-right"></span>
+
+			</li>
+			<li>
+				<a href="#" class="has-submenu">
+					<span class="icon-cloud"></span>
+					云端数据
+					<span class="glyphicon glyphicon-chevron-right" id="slideicon"></span>
+				</a>
+				<ul class="nav nav-pills nav-stacked submenu">
+					<li>
+						<a href="#">
+						<span class="icon-files"></span>
+						文件管理</a>
+						<span class="arrow pull-right"></span>
+					</li>
+					<li>
+					
+						<a href="#">
+						<span class="icon-data"></span>
+						数据管理
+						</a>
+						<span class="arrow pull-right"></span>
+					</li>
+				</ul>
+			
+			</li>
+			<li>
+				<a href="#">
+					<span class="icon-tools"></span>
+					其他工具
+				</a>
+					<span class="arrow pull-right"></span>
+
+			</li>
+		</ul>
+	</div>
+	<div class="content">
+		<div class="row">
+			<p class="sectiontitle">
+				<span class="icon-nodenumber"></span>
+				节点数
+			</p>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 all">
+				<a href="#">
+					<span>12</span>
+					全部节点
+				</a>
+			</div>
+			<div class="col-sm-7">
+				<div class="row">
+					<div class="col-sm-4 active number">
+						<a href="#">
+							<span>2</span>
+							活动的节点
+						</a>
+					</div>
+					<div class="col-sm-4 lose number">
+						<a href="#">
+							<span>11</span>
+							丢失的节点
+						</a>
+					</div>
+					<div class="col-sm-4 stop number">
+						<a href="#">
+							<span>3</span>
+							停用的节点
+						</a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-4 unhealthy number">
+						<a href="#">
+							<span>4</span>
+							非健康节点
+						</a>
+					</div>
+					<div class="col-sm-4 restart number">
+						<a href="#">
+							<span>0</span>
+							重启的节点
+						</a>
+					</div>
+					<div class="col-sm-4 ready number">
+						<a href="#">
+							<span>1</span>
+							待添加节点
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<p class="sectiontitle sectionpadding">
+				<span class="icon-performance"></span>
+				集群性能
+			</p>
+		</div>
+		<div class="row">
+			<div class="col-lg-4 col-md-6 performance">
+				<div class="col-sm-6 pie">
+					<div class="circle pull-right">
+						<canvas id="myChart" height="150" width="150"></canvas>
+						<div class="shade">
+							<h2>55%</h2>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 info">
+					<p class="total blue">CPU总量：4KMHZ</p>
+					<p class="used blue">
+						<span class="point "></span>
+						已使用：3KMHZ
+					</p>
+					<p class="unused blue-empty">
+						<span class="point "></span>
+						未使用：1KMHZ
+					</p>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 performance ram">
+				<div class="col-sm-6 pie">
+					<div class="circle pull-right"></div>
+				</div>
+				<div class="col-sm-6 info">
+					<p class="total yellow">内存总量：6TB</p>
+					<p class="used yellow">
+						<span class="point "></span>
+						已使用：3TB
+					</p>
+					<p class="unused  yellow-empty">
+						<span class="point"></span>
+						未使用：3TB
+					</p>
+					<a href="#" class="more"   data-toggle="popover" href="#" data-content="<p>分享的内存：12GB</p>
+					<p>分享的内存：12GB</p>
+					<p>分享的内存：12GB</p>
+					<p>分享的内存：12GB</p>
+					" data-original-title="更多信息">更多
+				</a>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-6 performance disk">
+			<div class="col-sm-6 pie">
+				<div class="circle pull-right"></div>
+			</div>
+			<div class="col-sm-6 info">
+				<p class="total orange">磁盘总量：50PB</p>
+				<p class="used orange">
+					<span class="point "></span>
+					已使用：39PB
+				</p>
+				<p class="unused orange-empty">
+					<span class="point "></span>
+					未使用：11PB
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="navbar navbar-default navbar-fixed-bottom bottombar" role="navigation">
+	<span>输入 12M/s 输出 35M/s</span>
+	<a href="#">
+		<img src="images/graph.png" alt=""></a>
+</div>
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+		$(".more").popover({
+			// content:'<p>'+123231+'</p>'
+			html:'true'
+		});
+	</script>
+<script src="js/Chart.min.js"></script>
+<script>
+		var data = [
+		{
+			value : 60,
+			color : "#1cbcaf"
+		},
+		{
+			value : 300,
+			color : "#c6eeeb"
+		}
+	]
+	 	var option = {
+	 		
+	 	}
+	//Get context with jQuery - using jQuery's .get() method.
+	var ctx = $("#myChart").get(0).getContext("2d");
+	//This will get the first returned node in the jQuery collection.
+	var myNewChart = new Chart(ctx);
+	new Chart(ctx).Doughnut(data,option);
+	</script>
+	<script>
+	// 边栏导航
+		$(".has-submenu").click(function(event) {
+			/* Act on the event */
+			$(this).next("ul").slideToggle();
+			$("#slideicon").toggleClass('slideiconhover');
+		});
+		
+	</script>
+</body>
+</html>

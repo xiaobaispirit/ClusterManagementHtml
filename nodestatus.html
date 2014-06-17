@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<title>大数据平台管理系统-节点状态</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!-- <link rel="stylesheet" href="css/tooltipster.css"> -->
+	</head>
+<body>
+	<div class="navbar navbar-default navbar-fixed-top topbar" role="navigation">
+		<a class="navbar-brand" href="#"></a>
+		<ul class="nav navbar-nav pull-right cornergroup">
+			<li>
+				<a href="#" class="icon-user"></a>
+			</li>
+			<li>
+				<a href="#" class="icon-notifier"></a>
+			</li>
+			<li>
+				<a href="#" class="icon-set"></a>
+			</li>
+		</ul>
+	</div>
+	<div class="navbar navbar-default navbar-static-top sidebar" role="navigation">
+		<ul class="nav nav-pills  nav-stacked">
+			<li>
+				<a href="index.html">
+					<span class="icon-cluster"></span>
+					集群状态
+				</a>
+				<span class="arrow pull-right"></span>
+			</li>
+			<li>
+				<a href="nodestatus.html "  class="actived">
+					<span class="icon-node"></span>
+					节点状态
+				</a>
+					<span class="arrow pull-right"></span>
+
+			</li>
+			<li>
+				<a href="taskstatus.html" >
+					<span class="icon-task"></span>
+					任务状态
+				</a>
+					<span class="arrow pull-right"></span>
+
+			</li>
+			<li>
+				<a href="#" class="has-submenu">
+					<span class="icon-cloud"></span>
+					云端数据
+					<span class="glyphicon glyphicon-chevron-right" id="slideicon"></span>
+				</a>
+				<ul class="nav nav-pills nav-stacked submenu">
+					<li>
+						<a href="#">
+						<span class="icon-files"></span>
+						文件管理</a>
+						<span class="arrow pull-right"></span>
+					</li>
+					<li>
+					
+						<a href="#">
+						<span class="icon-data"></span>
+						数据管理
+						</a>
+						<span class="arrow pull-right"></span>
+					</li>
+				</ul>
+			
+			</li>
+			<li>
+				<a href="#">
+					<span class="icon-tools"></span>
+					其他工具
+				</a>
+					<span class="arrow pull-right"></span>
+
+			</li>
+		</ul>
+	</div>
+	<div class="content">
+		<div class="row">
+			<ul class="nav nav-pills filter">
+				<li>
+					<a href="#" class="filtertitle">筛选条件:</a>
+				</li>
+				<li class="active">
+					<a href="#">活动的节点</a>
+				</li>
+				<li>
+					<a href="#">丢失的节点</a>
+				</li>
+				<li>
+					<a href="#">停用的节点</a>
+				</li>
+				<li>
+					<a href="#">重启的节点</a>
+				</li>
+				<li>
+					<a href="#">非健康节点</a>
+				</li>
+				<li>
+					<a href="#">待添加节点</a>
+				</li>
+			</ul>
+		</div>
+		<div class="row line">
+			<button type="button" class="btn btn-success btn-lg pull-right btn-addnode">添加节点</button>
+		</div>
+		<div class="row nodecontainer">
+			<div class="col-lg-3 col-md-4 col-sm-6">
+				<div class="nodebox">
+					<div class="col-sm-12 ">
+						<div class="col-sm-12 nodename">
+							<img class="nodeicon pull-left" src="images/icon-nodetitle.png" alt="节点">
+							<p>Namemaster</p>
+							<p>192.168.1.254</p>
+						</div>
+						<div class="col-sm-12 role">
+							<span class="label label-primary">NameNode</span>
+							<span class="label label-success">SlaveNode</span>
+							<span class="label label-warning">Hbase</span>
+							<span class="label label-info">Hive</span>
+						</div>
+					</div>
+					<div class="col-sm-12 operate">
+						<a class="btn-nodecontrol"  title="配置">
+							<img src="images/set.png" alt="配置">
+						</a>
+						<a  class="btn-nodecontrol" href="#" title="备份">
+							<img src="images/storage.png" alt="备份" >
+						</a>
+						<a  class="btn-nodecontrol"href="#"  title="停用">
+							<img src="images/stop.png" alt="停用">
+						</a>
+						<a   class="btn-nodecontrol"href="#"  title="删除">
+							<img src="images/delete.png" alt="删除" >
+						</a>
+						<div class="btn-group">
+							<a class="dropdown-toggle btn-nodecontrol" data-toggle="dropdown" title="更多">
+								<img src="images/more.png" alt="更多">
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#">操作1</a>
+								</li>
+								<li>
+									<a href="#">操作2</a>
+								</li><li>
+									<a href="#">操作2</a>
+								</li>
+							</ul>
+						</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-4 col-sm-6">
+			<div class="nodebox"></div>
+		</div>
+		<div class="col-lg-3 col-md-4 col-sm-6">
+			<div class="nodebox"></div>
+		</div>
+		<div class="col-lg-3 col-md-4 col-sm-6">
+			<div class="nodebox"></div>
+		</div>
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">节点详情 - NameMaster</h4>
+				</div>
+				<div class="modal-body">
+					<h5 class="line-in-one">所在机架: Rack2</h5>
+					<h5 class="line-in-one">节点地址: SomeWhere</h5>
+					<h5>Http地址: 192.168.1.253</h5>
+					<h5>
+						节点角色:
+						<span class="label label-primary">NameNode</span>
+						<span class="label label-success">SlaveNode</span>
+						<span class="label label-warning">Hbase</span>
+						<span class="label label-info">Hive</span>
+					</h5>
+					<h5 class="RAM">
+						内存：
+						<p class="pull-right">
+							<span class="point totalRAM"></span>
+							总量24GB
+						</p>
+						<p class="pull-right">
+							<span class="point"></span>
+							已使用8GB
+						</p>
+					</h5>
+					<div class="progress">
+						<div class="progress-bar progress-bar-success" style="width: 35%">
+							<span class="sr-only">35% Complete (success)</span>
+						</div>
+					</div>
+					<h5>
+						CPU：
+						<p class="pull-right">
+							<span class="point totalRAM"></span>
+							总量5.5GHZ
+						</p>
+						<p class="pull-right">
+							<span class="point"></span>
+							已使用4GHZ
+						</p>
+					</h5>
+					<div class="progress">
+						<div class="progress-bar progress-bar-success" style="width: 75%">
+							<span class="sr-only">35% Complete (success)</span>
+						</div>
+					</div>
+					<h5>
+						健康报告：
+						<span class="label label-warning">较差</span>
+					</h5>
+					<h5>
+						安全报告：
+						<span  class="label label-success">良好</span>
+					</h5>
+					<div class="col-sm-12"></div>
+					<div class="col-sm-12"></div>
+					<div class="col-sm-12"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">节点详情 - NameMaster02</h4>
+				</div>
+				<div class="modal-body">
+					<h5 class="line-in-one">所在机架: Rack2</h5>
+					<h5 class="line-in-one">节点地址: SomeWhere</h5>
+					<h5>Http地址: 192.168.1.253</h5>
+					<h5>
+						节点角色:
+						<span class="label label-primary">NameNode</span>
+						<span class="label label-success">SlaveNode</span>
+						<span class="label label-warning">Hbase</span>
+						<span class="label label-info">Hive</span>
+					</h5>
+					<h5 class="RAM">
+						内存：
+						<p class="pull-right">
+							<span class="point totalRAM"></span>
+							总量24GB
+						</p>
+						<p class="pull-right">
+							<span class="point"></span>
+							已使用8GB
+						</p>
+					</h5>
+					<div class="progress">
+						<div class="progress-bar progress-bar-success" style="width: 35%">
+							<span class="sr-only">35% Complete (success)</span>
+						</div>
+					</div>
+					<h5>
+						CPU：
+						<p class="pull-right">
+							<span class="point totalRAM"></span>
+							总量5.5GHZ
+						</p>
+						<p class="pull-right">
+							<span class="point"></span>
+							已使用4GHZ
+						</p>
+					</h5>
+					<div class="progress">
+						<div class="progress-bar progress-bar-success" style="width: 75%">
+							<span class="sr-only">35% Complete (success)</span>
+						</div>
+					</div>
+					<h5>
+						健康报告：
+						<span class="label label-warning">较差</span>
+					</h5>
+					<h5>
+						安全报告：
+						<span  class="label label-success">良好</span>
+					</h5>
+					<div class="col-sm-12"></div>
+					<div class="col-sm-12"></div>
+					<div class="col-sm-12"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+</div>
+<div class="navbar navbar-default navbar-fixed-bottom bottombar" role="navigation">
+	<span>输入 12M/s 输出 35M/s</span>
+	<a href="#">
+		<img src="images/graph.png" alt=""></a>
+</div>
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- <script src="js/jquery.tooltipster.min.js"></script> -->
+<script>
+		// 点击呼出节点详情模态框(按序列)
+		var box = $(".nodebox")
+		$(".nodebox").click(function(event) {
+			var i = box.index($(this));
+			$(".modal:eq("+i+")").modal();
+			/* Act on the event */
+		});
+		// 节点操作-阻止事件冒泡
+		$(".btn-nodecontrol").click(function(event) {
+			/* Act on the event */
+			event.stopPropagation();
+		});
+		$('.dropdown-toggle').dropdown();
+		$('.btn-nodecontrol').tooltip({container:'body'});
+	</script>
+	<script>
+	// 边栏导航
+		$(".has-submenu").click(function(event) {
+			/* Act on the event */
+			$(this).next("ul").slideToggle();
+			$("#slideicon").toggleClass('slideiconhover');
+		});
+		
+	</script>
+</body>
+</html>
